@@ -3,16 +3,16 @@ Code for Active Visual Object Search (AVOS) Using Deep Reinforcement Learning
 
 ## Requirements
 - Tensorflow 1.4.0 for Python3
-- Download and extract the data from this link into the repository folder, it contains the pre-computed outputs of the instance classifier of Ammirato et al., the required outputs of the Inception v3 network, as well as the object proposals from Faster RCNN.
+- [Download](https://drive.google.com/open?id=1VflwmxfLVTee7fDm_eR2xGz9CrrerdzF) and extract the data into the repository folder, it contains the pre-computed outputs of the instance classifier of Ammirato et al., the required outputs of the Inception v3 network, as well as the object proposals from Faster RCNN.
 
 ## Use of our pre-trained networks
-- To use our DRQN agent trained with Faster R-CNN (RPN) object proposals:
--- Download savedweights_pretrained_faster_rcnn_drqn into this folder
--- execute:  $python3 RL_agent.py _pretrained_faster_rcnn_drqn faster_rcnn drqn
+To use our DRQN agent trained with Faster R-CNN (RPN) object proposals:
+- [Download](https://drive.google.com/open?id=1EfgheF2GyoyHvwWrngsKoNRxhmZtfyDw) savedweights_pretrained_faster_rcnn_drqn into this folder
+- execute:  $python3 RL_agent.py _pretrained_faster_rcnn_drqn faster_rcnn drqn
 
-- To use our DRQN agent trained with ground truth (GT) object proposals:
--- Download savedweights_pretrained_gt_drqn into this folder
--- execute:  $python3 RL_agent.py _pretrained_gt_drqn gt drqn
+To use our DRQN agent trained with ground truth (GT) object proposals:
+- [Download](https://drive.google.com/open?id=1mrWDXDls5d_Z6SjA7OitOlh6q2yfEz5r) savedweights_pretrained_gt_drqn into this folder
+- execute:  $python3 RL_agent.py _pretrained_gt_drqn gt drqn
 
 ## Training new agents
 - To train DRQN using Faster R-CNN object proposals: $python3 RL_agent.py _faster_rcnn_drqn faster_rcnn drqn
