@@ -34,22 +34,26 @@ honey_bunches_of_oats_honey_roasted, honey_bunches_of_oats_with_almonds, pepto_b
 pringles_bbq, progresso_new_england_clam_chowder, red_bull
 
 ## Evaluation of the agents
-We split test scenes into partially known scenes and unknown scenes.
-- Partially known scenes have been used with a different object arragentment during training (easy - Home_005_2, medium - Home_001_2, hard - Home_003_2).
-- Unknown scenes have never been visited during training (easy - Home_015_01, hard - Home_010_01).
+We evaluate two test scenarios: (1) new object arrangements in otherwise known environments, and (2) fully unknown environments.
+In both cases, the test environments have not been used during training.
 
-Furthermore, we split test target objects into familiar objects and unfamiliar objects:
-- Familiar objects have been searched for during training (they are at different positions during testing for partially known scenes). During testing we use the following familiar objects as target objects: aunt_jemima_original_syrup, mahatma_rice, coca_cola_glass_bottle, spongebob_squarepants_fruit_snaks, tapatio_hot_sauce
-- Unfamiliar objects have not been used as search targets during training. During testing we use the following unfamiliar objects as target objects: crystal_hot_sauce, bumblebee_albacore, quaker_chewy_low_fat_chocolate_chunk, nature_valley_sweet_and_salty_nut_almond, crest_complete_minty_fresh
+For the "New object arrangement" scenario the following scans are used 
+- Easy evironment: Home_005_2
+- Medium difficult evironment: Home_001_2
+- Hard evironmen: Home_003_2
 
-The default scenario of the examined AVOS task is the search for familiar objects in partially known scenes, which represents the task that a robot is faced when searching for targets in a known environment.
+For the "New apartment" scenario we test on these scans:
+- Easy evironment: Home_015_01
+- Hard evironmen: Home_010_01
 
-In order to test on familiar scenes with familiar objects
-- Use the same parameters as for training and add the parameter test_on_familiar_scenes_with_familiar_objects to it
--- E.g. to test drqn trained on GT proposals (with weights stored in savedweights_gt_drqn): $python3 RL_agent.py _gt_drqn gt drqn test_on_familiar_scenes_with_familiar_objects
-- To test on unfamiliar scenes with familiar objects add the parameter: test_on_unfamiliar_scenes_with_familiar_objects
-- To test on familiar scenes with unfamiliar objects add the parameter: test_on_familiar_scenes_with_unfamiliar_objects
-- Results will be written to test_series_results_x_nameofyouragent
+In both cases, the following target objects are searched for: aunt_jemima_original_syrup, mahatma_rice, coca_cola_glass_bottle, spongebob_squarepants_fruit_snaks, tapatio_hot_sauce
+
+In order to test using the "New object arrangement" scenario, use the same parameters as for training and add the parameter test_on_familiar_scenes_with_familiar_objects to it
+- E.g. to test drqn trained on GT proposals (with weights stored in savedweights_gt_drqn): $python3 RL_agent.py _gt_drqn gt drqn test_on_familiar_scenes_with_familiar_objects
+
+In order to test using the "New apartment" scenario, add the parameter: test_on_unfamiliar_scenes_with_familiar_objects
+
+Results will be written to test_series_results_x_nameofyouragent
 
 ## Visualization of the agent behavior
 Download the active vision dataset: http://cs.unc.edu/~ammirato/active_vision_dataset_website/get_data.html
